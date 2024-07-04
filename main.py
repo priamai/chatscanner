@@ -2,6 +2,9 @@ import scrapy
 from scrapy.crawler import CrawlerProcess
 from bs4 import BeautifulSoup
 import subprocess
+import logging
+import scrapy
+
 from scrapy.utils.project import get_project_settings
 
 class ChatbotSpider(scrapy.Spider):
@@ -51,6 +54,8 @@ def spider_ended(spider, reason):
     print('Spider ended:', spider.name, reason)
     print("Detected chatbots %d " % len(spider.detected_chatbots))
 
+
+"""
 settings = get_project_settings()
 # Run the spider
 process = CrawlerProcess()
@@ -62,5 +67,4 @@ spider = ChatbotSpider()
 process.crawl(ChatbotSpider)
 process.start()
 
-
-
+"""
