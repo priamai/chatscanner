@@ -30,20 +30,24 @@ class ChatbotSpider(scrapy.Spider):
             for lib, keywords in self.chatbot_libraries.items():
                 if any(keyword in script.text.lower() for keyword in keywords):
                     detected_chatbots.append(lib)
+                    yield {"tag": script.name}
                 for att in script.attrs:
                     if att == "data-resources-url":
                         if any(keyword in script.attrs[att] for keyword in keywords):
                             detected_chatbots.append(lib)
+                            yield {"url":response.url,"tag":script.name,"attribute":att,"value":script.attrs[att]}
 
         for div in soup.find_all('div'):
             for lib, keywords in self.chatbot_libraries.items():
                 if any(keyword in div.text.lower() for keyword in keywords):
                     detected_chatbots.append(lib)
+                    yield {"tag": script.name}
 
         for link in soup.find_all('link', {'rel': 'stylesheet'}):
             for lib, keywords in self.chatbot_libraries.items():
                 if any(keyword in link.get('href', '').lower() for keyword in keywords):
                     detected_chatbots.append(lib)
+                    yield {"tag": script.name}
 
         if detected_chatbots:
             self.log(f"Chatbots detected on {response.url}: {', '.join(set(detected_chatbots))}")
