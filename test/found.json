@@ -1,0 +1,7 @@
+[
+{"url": "http://127.0.0.1:7860/",
+  "message_human_css": "div.message-row.bubble.user-row",
+  "message_bot_css": "div.message-row.bubble.bot-row",
+  "message_input_css": "textarea.scroll-hide.svelte-1f354aw"
+}
+]

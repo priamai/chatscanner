@@ -33,8 +33,8 @@ def respond(message, chat_history):
 
 with gr.Blocks() as demo:
     chatbot = gr.Chatbot()
-    msg = gr.Textbox()
-    clear = gr.Button("Clear")
+    msg = gr.Textbox(elem_id="user_message")
+    clear = gr.Button("Clear",elem_id="clear")
 
     def user(user_message, history):
         return "", history + [[user_message, None]]

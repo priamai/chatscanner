@@ -7,9 +7,11 @@ First launch the tool on target URLS:
 ```
 scrapy runspider chatbot_spider www.google.com
 ```
-This will generate a file ouptut which contains the most likely candidate html tags 
+
+This will generate a file ouptut called *found.json* which contains the most likely candidate html tags 
 that are typically a button and a form input.
 
+You then have to run the browser emulator which will hook a bot to test the target.
 
 # Selenium Proxy
 

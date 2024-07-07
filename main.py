@@ -54,21 +54,3 @@ class ChatbotSpider(scrapy.Spider):
         else:
             self.log(f"No chatbots detected on {response.url}")
 
-def spider_ended(spider, reason):
-    print('Spider ended:', spider.name, reason)
-    print("Detected chatbots %d " % len(spider.detected_chatbots))
-
-
-"""
-settings = get_project_settings()
-# Run the spider
-process = CrawlerProcess()
-
-for crawler in process.crawlers:
-    crawler.signals.connect(spider_ended, signal=scrapy.signals.spider_closed)
-
-spider = ChatbotSpider()
-process.crawl(ChatbotSpider)
-process.start()
-
-"""
