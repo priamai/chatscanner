@@ -51,6 +51,6 @@ with gr.Blocks() as demo:
         bot, chatbot, chatbot
     )
     clear.click(lambda: None, None, chatbot, queue=False)
-
-demo.queue()
-demo.launch()
+if __name__ == "__main__":
+    demo.queue()
+    demo.launch(share=False)
