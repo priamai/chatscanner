@@ -102,9 +102,9 @@ class ChatAutomaton:
                     logging.info("Got messages")
 
                     for user_msg in user_messages:
-                        logging.info("User message id = {0} text {1}".format(user_msg.id,user_msg.text))
+                        logging.info("User message ID = {0} | Text = {1}".format(user_msg.id,user_msg.text))
                     for bot_msg in bot_messages:
-                        logging.info("User message id = {0} text {1}".format(bot_msg.id,bot_msg.text))
+                        logging.info("Bot message ID = {0} | Text =  {1}".format(bot_msg.id,bot_msg.text))
 
                 except selenium.common.exceptions.NoSuchElementException as e:
                     logging.error("Unable to find all the elements")
